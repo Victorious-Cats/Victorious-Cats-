@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/style.css')}}">
+</head>
+
+<body class='home_body'>
+    <header>
+        <div id="header_grid">
+        <img id="MoodMgrLogo_image" src="{{url_for('static',filename='images/MoodMgrLogo.png')}}" alt ="MoodMgrLogo image">
+        <h1 id='header_title'>Welcome to Mood Manager</h1>
+    </header>
+        
+            
+        </div>
+        <div class="emote_box">
+            {% if messages %}
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+            <h1>Hey {{user}}, how are you feeling today?</h1>
+            <div id='emote_grid'>
+                <img id="propersad_image" src="{{url_for('static',filename='images/propersad.png')}}" alt ="propersad_image">
+                <img id="verysad_image" src="{{url_for('static',filename='images/Very Sad Emoji.png')}}" alt ="verysad_image">
+                <img id="neutral_image" src="{{url_for('static',filename='images/neutral.png')}}" alt ="neutral_image">
+                <img id="slighty_smiling_image" src="{{url_for('static',filename='images/slighty smiling.png')}}" alt ="slighty_smiling_image">
+                <img id="happy_image" src="{{url_for('static',filename='images/happy.png')}}" alt ="happy_image">
+
+            </div>
+
+
+
+            <form action ="#" method ="post">
+                <div onclick="" class="radio_section" >
+                    
+            
+                    
+                    <input type="radio" class="radio" name="emote_radio_output" value="0"/>
+                    
+                    
+                    
+                    <input type="radio" class="radio" name="emote_radio_output" value="1" required/>
+
+                    <input type="radio" class="radio" name="emote_radio_output" value="2"/>
+
+                    <input type="radio" class="radio" name="emote_radio_output" value="3"/>
+
+                    <input type="radio" class="radio" name="emote_radio_output" value="4"/>
+        
+                </div>
+                
+
+           
+
+            
+            
+        </div>
+        <div><input id="emote_submit" type="submit" value="Next"/></div>
+    </form>
+        
+
+        <a href="/logout" class="logout_button">Logout</a>
+        
+    
+
+    
+
+</body>
+
+</html>
