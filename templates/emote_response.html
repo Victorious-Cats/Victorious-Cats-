@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/style.css')}}">
+    </head>
+    <body class='home_body'>
+        <header>
+            <div id="header_grid">
+            <img id="MoodMgrLogo_image" src="{{url_for('static',filename='images/MoodMgrLogo.png')}}" alt ="MoodMgrLogo image">
+        </header>
+        {% if text %}
+        <h2>{{ text }}</h2>
+        {% else %}
+        <h2></h2>
+        {% endif %}
+        <h3>Can you tell me more about your day? :)</h3>
+        <form action="/long_response" method ="POST">
+            <textarea name="textbox" rows="10" cols="30"></textarea>
+            <br><br>
+            <input type="submit">
+          </form>
+    </body>
+</html>
