@@ -51,19 +51,19 @@ def emote_radio():
 @app.route("/long_response", methods=["POST"])
 def long_response():
     #list of positive key words, add more here pls since my vocabulary is limited
-    positive=["good","great","excellent","amazing","happy","perfect","well"]
+    positive=["good","great","excellent","amazing","happy","perfect","well", "cool", "fun", "neat", "nice", "positive", "joyous", "exciting", "wonderful", "refreshing", "invigorating", "wowza", "enjoyable"]
     #Same here for negative key words
-    negative=["bad","terrible","ugly","horrible","sad","dissapointed","down"]
+    negative=["bad","terrible","ugly","horrible","sad","dissapointed","down", "depressed", "miserable", "moody", "worn out", "tired", "exhausted", "poor", "sick"]
     #Random response for each of them, feel free to add more
-    positive_response=["Oh my god, that's a very cool story from you, I'm so happy to hear that","Yayyy, that's so good, you are such an amazing person, hope you could keep this emotion forerver"]
-    negative_response=["Oops, not a good thing to hear, I suggest you should go watch Squid Game, surely it can make your day better","I'm so sorry to hear that, but I think when you shared it with me, at least you have released your negative energy for the rest of the day"]
+    positive_response=["Oh my god, that's a very cool story from you, I'm so happy to hear that","Yayyy, that's so good, you are such an amazing person, hope you could keep this emotion forerver", "Hell Yeah!", "That's so cool that you had a good day!", "It's days like these that you will remember when you're older!", "Wow! Thats Awesome!"]
+    negative_response=["Oops, not a good thing to hear, I suggest you should go watch Squid Game, surely it can make your day better","I'm so sorry to hear that, but I think when you shared it with me, at least you have released your negative energy for the rest of the day", "Oh no!, You arent feeling well? That's rough buddy", "That sucks but lets try and look on the bright side! It's a beautiful day to be here", "Nooo! Let's try and make your day a bit better, how about some fresh air?", "Thats no good! Maybe some sunshine on a nice walk will help you feel better?"]
     
     response = request.form["textbox"]
     reply=""
     if any(word in response for word in positive):
         reply += random.choice(positive_response)
     elif any(word in response for word in negative):
-        reply += random.choice(positive_response)
+        reply += random.choice(negative_response)
     else:
         #this is in case no given key words has been found, I dont know what to say so Ima leave it like this, feel free to edit
         reply += "Interesting!"
