@@ -10,7 +10,7 @@
         <img id="MoodMgrLogo_image" src="{{url_for('static',filename='images/MoodMgrLogo.png')}}" alt ="MoodMgrLogo image">
         <h1 id='header_title'>Welcome to Mood Manager</h1>
     </header>
-    <form action="#" method="post">
+    <form action="#" method="post" id = "form">
         <fieldset>
             <legend>Register</legend>
             <label>Username:</label> <input type="text" name="username" id="username" required value = "{{username if username}}">
@@ -21,7 +21,7 @@
             {% else %}
             <h2></h2>
             {% endif %}
-            <p><input type="submit" value="submit"/></p>
+            <p id ="button"><input type="submit"/></p>
 			<br/><br/>
         </fieldset>
         

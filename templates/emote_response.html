@@ -9,19 +9,19 @@
             <img id="MoodMgrLogo_image" src="{{url_for('static',filename='images/MoodMgrLogo.png')}}" alt ="MoodMgrLogo image">
         </header>
         {% if text1 %}
-        <h2>{{ text1 }}</h2>
+        <h2 style ="text-align: center;">{{ text1 }}</h2>
         {% else %}
         <h2></h2>
         {% endif %}
         {% if text2 %}
-        <h2>{{ text2 }}</h2>
+        <h3 style ="text-align: center;">{{ text2 }}</h3>
         {% else %}
         <h2></h2>
         {% endif %}
-        <form action="/long_response" method ="POST">
+        <form action="/long_response" method ="POST" id = "long_form">
             <textarea name="textbox" rows="10" cols="30"></textarea>
             <br><br>
-            <input type="submit">
+            <p id ="long_button" ><input type="submit" ></p>
           </form>
     </body>
 </html>
