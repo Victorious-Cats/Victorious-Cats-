@@ -8,12 +8,16 @@
             <div id="header_grid">
             <img id="MoodMgrLogo_image" src="{{url_for('static',filename='images/MoodMgrLogo.png')}}" alt ="MoodMgrLogo image">
         </header>
-        {% if text %}
-        <h2>{{ text }}</h2>
+        {% if text1 %}
+        <h2>{{ text1 }}</h2>
         {% else %}
         <h2></h2>
         {% endif %}
-        <h3>Can you tell me more about your day? :)</h3>
+        {% if text2 %}
+        <h2>{{ text2 }}</h2>
+        {% else %}
+        <h2></h2>
+        {% endif %}
         <form action="/long_response" method ="POST">
             <textarea name="textbox" rows="10" cols="30"></textarea>
             <br><br>
